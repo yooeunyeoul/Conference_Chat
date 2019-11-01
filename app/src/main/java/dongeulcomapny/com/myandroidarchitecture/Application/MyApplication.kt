@@ -17,6 +17,9 @@
 package dongeulcomapny.com.myandroidarchitecture.application
 
 import android.app.Application
+import com.orhanobut.logger.AndroidLogAdapter
+import com.orhanobut.logger.Logger
+import com.orhanobut.logger.PrettyFormatStrategy
 import dongeulcomapny.com.myandroidarchitecture.ServiceLocator
 import dongeulcomapny.com.myandroidarchitecture.repository.DataRepository
 
@@ -34,5 +37,16 @@ class MyApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
+        val formatStrategy = PrettyFormatStrategy.newBuilder()
+            .showThreadInfo(true)
+//            .methodCount(0)
+//            .methodOffset(7)
+//            .tag("PRETTY_LOGGER")
+            .build()
+
+        Logger.addLogAdapter(AndroidLogAdapter(formatStrategy))
+
+        Logger.w("Hello")
     }
 }

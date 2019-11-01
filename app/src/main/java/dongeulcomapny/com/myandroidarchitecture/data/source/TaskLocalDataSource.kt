@@ -1,5 +1,6 @@
 package dongeulcomapny.com.myandroidarchitecture.data.source
 
+import com.orhanobut.logger.Logger
 import dongeulcomapny.com.myandroidarchitecture.data.TaskDataSource
 import dongeulcomapny.com.myandroidarchitecture.data.User
 import dongeulcomapny.com.myandroidarchitecture.data.network.Result
@@ -14,6 +15,7 @@ class TaskLocalDataSource internal constructor(
     private val ioDispatcher : CoroutineDispatcher = Dispatchers.IO
 ):TaskDataSource {
     override suspend fun saveUser(user: User) = withContext(ioDispatcher){
+        Logger.d(user)
         taskDao.insertUser(user)
     }
 

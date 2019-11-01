@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.orhanobut.logger.Logger
 import dongeulcomapny.com.myandroidarchitecture.clickevent.Event
 import dongeulcomapny.com.myandroidarchitecture.data.User
 import dongeulcomapny.com.myandroidarchitecture.data.network.Result
@@ -34,6 +35,7 @@ class UserFragmentViewModel(private val repository: DataRepository) : ViewModel(
 
         viewModelScope.launch {
             val getUsersResult = repository.getUserData(forceUpdate = forceUpdate)
+            Logger.d(getUsersResult)
             if (getUsersResult is Result.CallBackSuccess) {
                 val users = getUsersResult.data
 

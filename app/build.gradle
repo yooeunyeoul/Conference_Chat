@@ -55,6 +55,9 @@ dependencies {
     // DB 툴
     debugImplementation 'com.amitshekhar.android:debug-db:1.0.4'
 
+    //Logger
+    implementation 'com.orhanobut:logger:2.2.0'
+
 
 
 
