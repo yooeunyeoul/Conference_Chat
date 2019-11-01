@@ -15,30 +15,31 @@
  */
 package dongeulcomapny.com.myandroidarchitecture.viewModelFactory
 
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import dongeulcomapny.com.myandroidarchitecture.repository.DataRepository
+import dongeulcomapny.com.myandroidarchitecture.viewModel.RoomFragmentViewModel
+import dongeulcomapny.com.myandroidarchitecture.viewModel.UserFragmentViewModel
+import java.lang.IllegalArgumentException
 
 /**
  * Factory for all ViewModels.
  */
-@Suppress("UNCHECKED_CAST")
+
 class ViewModelFactory constructor(
     private val repository: DataRepository
 ) : ViewModelProvider.NewInstanceFactory() {
 
-//    override fun <T : ViewModel> create(modelClass: Class<T>) =
-//        with(modelClass) {
-//            when {
-//                isAssignableFrom(StatisticsViewModel::class.java) ->
-//                    StatisticsViewModel(tasksRepository)
-//                isAssignableFrom(TaskDetailViewModel::class.java) ->
-//                    TaskDetailViewModel(tasksRepository)
-//                isAssignableFrom(AddEditTaskViewModel::class.java) ->
-//                    AddEditTaskViewModel(tasksRepository)
-//                isAssignableFrom(TasksViewModel::class.java) ->
-//                    TasksViewModel(tasksRepository)
-//                else ->
-//                    throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
-//            }
-//        } as T
+    override fun <T : ViewModel?> create(modelClass: Class<T>) =
+        with(modelClass) {
+            when{
+                isAssignableFrom(UserFragmentViewModel::class.java) ->
+                    UserFragmentViewModel(repository)
+                isAssignableFrom(RoomFragmentViewModel::class.java)->
+                    RoomFragmentViewModel(repository)
+                else->
+                    throw IllegalArgumentException("Unknown Viewmodel Class")
+            }
+        } as T
+
 }

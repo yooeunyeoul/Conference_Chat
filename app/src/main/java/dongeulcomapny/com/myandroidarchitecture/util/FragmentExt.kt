@@ -20,7 +20,7 @@ package dongeulcomapny.com.myandroidarchitecture.util
  */
 
 import androidx.fragment.app.Fragment
-import dongeulcomapny.com.myandroidarchitecture.Application.MyApplication
+import dongeulcomapny.com.myandroidarchitecture.application.MyApplication
 import dongeulcomapny.com.myandroidarchitecture.viewModelFactory.ViewModelFactory
 
 

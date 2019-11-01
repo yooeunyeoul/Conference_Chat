@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/userFragment">
+
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="dongeulcomapny.com.myandroidarchitecture.ui.UserFragment"
+        android:label="UserFragment" >
+        <action
+            android:id="@+id/action_userFragment_to_userDetailFragment"
+            app:destination="@id/userDetailFragment" />
+        <argument
+            android:name="userNo"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_userFragment_to_roomFragment"
+            app:destination="@id/roomFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/userDetailFragment"
+        android:name="dongeulcomapny.com.myandroidarchitecture.ui.UserDetailFragment"
+        android:label="UserDetailFragment" />
+
+    <fragment
+        android:id="@+id/roomFragment"
+        android:name="dongeulcomapny.com.myandroidarchitecture.ui.RoomFragment"
+        android:label="RoomFragment" >
+        <action
+            android:id="@+id/action_roomFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+    </fragment>
+
+
+
+</navigation>

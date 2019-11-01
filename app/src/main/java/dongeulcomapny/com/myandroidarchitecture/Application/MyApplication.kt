@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package dongeulcomapny.com.myandroidarchitecture.Application
+package dongeulcomapny.com.myandroidarchitecture.application
 
 import android.app.Application
+import dongeulcomapny.com.myandroidarchitecture.ServiceLocator
 import dongeulcomapny.com.myandroidarchitecture.repository.DataRepository
 
 /**
@@ -27,15 +28,11 @@ import dongeulcomapny.com.myandroidarchitecture.repository.DataRepository
  */
 class MyApplication : Application() {
 
-//     Depends on the flavor,
+    //     Depends on the flavor,
     val taskRepository: DataRepository
-    get() {
-        return taskRepository
-    }
-//        get() = ServiceLocator.provideTasksRepository(this)
+        get() = ServiceLocator.provideTasksRepository(this)
 
     override fun onCreate() {
         super.onCreate()
-
     }
 }
