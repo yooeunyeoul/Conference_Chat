@@ -38,6 +38,7 @@ class UserFragmentViewModel(private val repository: DataRepository) : ViewModel(
             Logger.d(getUsersResult)
             if (getUsersResult is Result.CallBackSuccess) {
                 val users = getUsersResult.data
+                Logger.w(users.toString())
 
 
 

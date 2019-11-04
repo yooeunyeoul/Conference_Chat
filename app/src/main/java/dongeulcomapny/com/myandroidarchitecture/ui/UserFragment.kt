@@ -40,7 +40,7 @@ class UserFragment : Fragment() {
 
         viewDataBinding.lifecycleOwner = this.viewLifecycleOwner
         setupListAdapter()
-        viewModel.loadUsers(true)
+        viewModel.loadUsers(false)
     }
 
     private fun setupListAdapter() {
