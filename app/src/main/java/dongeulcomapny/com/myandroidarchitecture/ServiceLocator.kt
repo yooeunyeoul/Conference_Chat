@@ -17,7 +17,7 @@ object ServiceLocator {
 
      fun provideTasksRepository(context: Context):DataRepository{
         synchronized(this){
-            return dataRepository?: dataRepository?: createDataRepository(context)
+            return dataRepository?: createDataRepository(context)
         }
     }
 

@@ -27,11 +27,7 @@
     <fragment
         android:id="@+id/roomFragment"
         android:name="dongeulcomapny.com.myandroidarchitecture.ui.RoomFragment"
-        android:label="RoomFragment" >
-        <action
-            android:id="@+id/action_roomFragment_to_userFragment"
-            app:destination="@id/userFragment" />
-    </fragment>
+        android:label="RoomFragment" />
 
 
 
